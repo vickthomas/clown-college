@@ -1,177 +1,349 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Undecided</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
+
 <body>
     <header class="header">
 
     </header>
     <main class="main">
-            <div class="container">
-                <div class="">
-                    <p class="intro">College can help you realize the life of your dreams</p>
-                    <p class="intro">Unless it leaves you in a financial nightmare.</p>
-                </div>
-        
-                <div class="game-box">
-                    <h2 class="flawsome">Flawsome Lab Presents
+        <div class="intro-container" id="intro">
+            <div class="">
+                <p class="intro">College can help you realize the life of your dreams</p>
+                <p class="intro">Unless it leaves you in a financial nightmare.</p>
+            </div>
+
+            <div class="game-box" id="gameBox">
+                <h2 class="flawsome">Flawsome Lab Presents
                     <h1 id="gameName"></h1>
-                    <button class="start-game-btn">Create your Dream Avoid the Nightmate</button>
-                    </h2>
-        
-        
+                    <button class="btn" id="startGameBtn">Create your Dream Avoid the Nightmate</button>
+                </h2>
+
+
+            </div>
+        </div>
+        <!-- identify acceptance criteria when using variable 
+
+        use criteria to set up random generator (if => then)
+
+        the user will select gpa, extracuriculars, and state => generator will generate acceptance results based on 
+
+        user will have to make decisions that will increase different scores.  -->
+
+
+
+
+
+        <div class="apply-container text-center" id="applyForCollege">
+            <p class="application-instr">It's time to apply for college. Enter your details to find out where you'll be
+                accepted.</p>
+
+            <div class="application-form row justify-content-around">
+                <div class="col-5 gy-5">
+
+
+                    <select class="form-select form-select-lg mb-3 p-3" aria-label="gpa" id="gpa">
+
+                        <option selected>GPA</option>
+                        <option value="opt1">3.5-4.0 <span class="exponent">+</span></option>
+                        <option value="opt2">3.0-3.4</option>
+                        <option value="opt3">2.7-2.9</option>
+                        <option value="opt4">0.0-2.6</option>
+
+
+                    </select>
                 </div>
 
-                identify acceptance criteria when using variable 
+                <div class=" extracuriculars">
+                    <select class="form-select form-select-lg mb-3 col-4" aria-label="extracurricular"
+                        id="extracuricular">
 
-                use criteria to set up random generator (if => then)
+                        <option selected>Extracuriculars</option>
+                        <option value="high">High <span class="exponent">+</span></option>
+                        <option value="med">Medium</option>
+                        <option value="low">Low</option>
 
-                the user will select gpa, extracuriculars, and state => generator will generate acceptance results based on 
-
-                user will have to make decisions that will increase different scores. 
-
-
-qq
-
-
-                <div class="apply-for-college">
-                    <p class="application-instr">It's time to apply for college. Enter your details to find out where you'll be accepted.</p>
-        
-                    <div class="application-form">
-                        <div class="">
-        
-                        
-                            <label for="gpaList">GPA</label>
-        
-                            <select name="gpa" id="gpa-select">
-                                <option value="opt1">3.5-4.0 <span class="exponent">+</span></option>
-                                <option value="opt2">3.0-3.4</option>
-                                <option value="opt3">2.7-2.9</option>
-                                <option value="opt4">1.7-2.6</option>
-                                <option value="opt5">0.0-1.6</option>
-        
-                            </select>
-                            <div class="info-icon mobile-hide" data-info="extracurricular" onclick="explanationScreenOpen(this, event)">
+                        <div class="info-icon mobile-hide" data-info="extracurricular"
+                            onclick="explanationScreenOpen(this, event)">
                             <div class="icon">i</div>
-                            </div>
                         </div>
+
+                    </select>
+
+                </div>
+
+                <div class="state col-4">
+
+                    <label for="state" class="form-label state"></label>
+                    <input class="form-control" list="datalistOptions" id="state" placeholder="State you live...">
+                    <datalist id="datalistOptions">
+                        <option value="Alabama">
+                        <option value="Alaska">
+                        <option value="Arizona">
+                        <option value="Arkansas">
+                        <option value="California">
+                        <option value="Colorado">
+                        <option value="Connecticut">
+                        <option value="Delaware">
+                        <option value="District of Columbia">
+                        <option value="Florida">
+                        <option value="Georgia">
+                        <option value="Hawaii">
+                        <option value="Idaho">
+                        <option value="Illinois">
+                        <option value="Indiana">
+                        <option value="Iowa">
+                        <option value="Kansas">
+                        <option value="Kentucky">
+                        <option value="Louisiana">
+                        <option value="Maine">
+                        <option value="Maryland">
+                        <option value="Massachusetts">
+                        <option value="Michigan">
+                        <option value="Minnesota">
+                        <option value="Mississippi">
+                        <option value="Missouri">
+                        <option value="Montana">
+                        <option value="Nebraska">
+                        <option value="Nevada">
+                        <option value="New Hampshire">
+                        <option value="New Jersey">
+                        <option value="New Mexico">
+                        <option value="New York">
+                        <option value="North Carolina">
+                        <option value="North Dakota">
+                        <option value="Ohio">
+                        <option value="Oklahoma">
+                        <option value="Oregon">
+                        <option value="Pennsylvania">
+                        <option value="Rhode Island">
+                        <option value="South Carolina">
+                        <option value="South Dakota">
+                        <option value="Tennessee">
+                        <option value="Texas">
+                        <option value="Utah">
+                        <option value="Vermont">
+                        <option value="Virginia">
+                        <option value="Washington">
+                        <option value="West Virginia">
+                        <option value="Wisconsin">
+                        <option value="Wyoming">
+                    </datalist>
+
+                </div>
+
+
+
+                <!-- <label for="gpa">GPA</label>
+
+                <select name="gpa" id="gpa">
+                    <option value="opt1">3.5-4.0 <span class="exponent">+</span></option>
+                    <option value="opt2">3.0-3.4</option>
+                    <option value="opt3">2.7-2.9</option>
+                    <option value="opt4">0.0-2.6</option>
+                
+
+                </select>
+                    <div class="info-icon mobile-hide" data-info="extracurricular" onclick="explanationScreenOpen(this, event)">
+                    <div class="icon">i</div>
+                    </div>
+                
+                
+                <div class="extracuriculars">
+                    <label for="extracuricular">Extracuriculars</label>
+
+                    <select name="extracuricular" id="extracuricular">
+                        <option value="high">High <span class="exponent">+</span></option>
+                        <option value="med">Medium</option>
+                        <option value="low">Low</option>
                         
-                        <div class="extracuriculars">
-                            <label for="extracuriculars">Extracuriculars</label>
-        
-                            <select name="extracuricular" id="extracuricular-select">
-                                <option value="high">High <span class="exponent">+</span></option>
-                                <option value="med">Medium</option>
-                                <option value="low">Low</option>
-                                
-        
-                            </select>
-        
-                        </div>
-        
-                        <div class="state">
-                            <label for="state">In which state do you live?</label>
-        
-                        
-                            <input type="text" id="state" list="states" name="state">
-        
-                            <datalist id="states">
-                            
-                                <option value="Alabama"></option>
-                                <option value="Alaska"></option>
-                                <option value="Arizona"></option>
-                                <option value="Arkansas"></option>
-                                <option value="California"></option>
-                                <option value="Colorado"></option>
-                                <option value="Connecticut"></option>
-                                <option value="Delaware"></option>
-                                <option value="District of Columbia"></option>
-                                <option value="Florida"></option>
-                                <option value="Georgia"></option>
-                                <option value="Hawaii"></option>
-                                <option value="Idaho"></option>
-                                <option value="Illinois"></option>
-                                <option value="Indiana"></option>
-                                <option value="Iowa"></option>
-                                <option value="Kansas"></option>
-                                <option value="Kentucky"></option>
-                                <option value="Louisiana"></option>
-                                <option value="Maine"></option>
-                                <option value="Maryland"></option>
-                                <option value="Massachusetts"></option>
-                                <option value="Michigan"></option>
-                                <option value="Minnesota"></option>
-                                <option value="Mississippi"></option>
-                                <option value="Missouri"></option>
-                                <option value="Montana"></option>
-                                <option value="Nebraska"></option>
-                                <option value="Nevada"></option>
-                                <option value="New Hampshire"></option>
-                                <option value="New Jersey"></option>
-                                <option value="New Mexico"></option>
-                                <option value="New York"></option>
-                                <option value="North Carolina"></option>
-                                <option value="North Dakota"></option>
-                                <option value="Ohio"></option>
-                                <option value="Oklahoma"></option>
-                                <option value="Oregon"></option>
-                                <option value="Pennsylvania"></option>
-                                <option value="Rhode Island"></option>
-                                <option value="South Carolina"></option>
-                                <option value="South Dakota"></option>
-                                <option value="Tennessee"value="Tennessee"></option>
-                                <option value="Texas"></option>
-                                <option value="Utah"></option>
-                                <option value="Vermont"></option>
-                                <option value="Virginia"></option>
-                                <option value="Washington"></option>
-                                <option value="West Virginia">West Virginia</option>
-                                <option value="Wisconsin"></option>
-                                <option value="Wyoming"></option>
-                            </datalist>
-                            
-                        </div>
-        
-                        <div>
-                            <button>Apply</button>
-                        </div>
-        
-        
-                    </div>
 
-                    <div class="decision">
-                        <h2 class="decision-heading">Your admission decisions are in. Where will you go?</h2>
+                    </select>
 
-                        <div class="in-state-public"></div>
-                        <div class="out-of-state-public"></div>
-                        <div class="private"></div>
-                        <div class="community-college"></div>
+                </div>
+
+                <div class="state">
+                    <label for="state">In which state do you live?</label>
+
+                
+                    <input type="text" id="state" list="states" name="state">
+
+                    <datalist id="states">
+                    
+                        <option value="Alabama"></option>
+                        <option value="Alaska"></option>
+                        <option value="Arizona"></option>
+                        <option value="Arkansas"></option>
+                        <option value="California"></option>
+                        <option value="Colorado"></option>
+                        <option value="Connecticut"></option>
+                        <option value="Delaware"></option>
+                        <option value="District of Columbia"></option>
+                        <option value="Florida"></option>
+                        <option value="Georgia"></option>
+                        <option value="Hawaii"></option>
+                        <option value="Idaho"></option>
+                        <option value="Illinois"></option>
+                        <option value="Indiana"></option>
+                        <option value="Iowa"></option>
+                        <option value="Kansas"></option>
+                        <option value="Kentucky"></option>
+                        <option value="Louisiana"></option>
+                        <option value="Maine"></option>
+                        <option value="Maryland"></option>
+                        <option value="Massachusetts"></option>
+                        <option value="Michigan"></option>
+                        <option value="Minnesota"></option>
+                        <option value="Mississippi"></option>
+                        <option value="Missouri"></option>
+                        <option value="Montana"></option>
+                        <option value="Nebraska"></option>
+                        <option value="Nevada"></option>
+                        <option value="New Hampshire"></option>
+                        <option value="New Jersey"></option>
+                        <option value="New Mexico"></option>
+                        <option value="New York"></option>
+                        <option value="North Carolina"></option>
+                        <option value="North Dakota"></option>
+                        <option value="Ohio"></option>
+                        <option value="Oklahoma"></option>
+                        <option value="Oregon"></option>
+                        <option value="Pennsylvania"></option>
+                        <option value="Rhode Island"></option>
+                        <option value="South Carolina"></option>
+                        <option value="South Dakota"></option>
+                        <option value="Tennessee"value="Tennessee"></option>
+                        <option value="Texas"></option>
+                        <option value="Utah"></option>
+                        <option value="Vermont"></option>
+                        <option value="Virginia"></option>
+                        <option value="Washington"></option>
+                        <option value="West Virginia">West Virginia</option>
+                        <option value="Wisconsin"></option>
+                        <option value="Wyoming"></option>
+                    </datalist>
+                    
+                </div> -->
+
+
+                <div>
+                    <button id="applyBtn">Apply</button>
+                </div>
+            </div>
+
+        </div>
 
 
 
 
-                    </div>
 
-                    <div class="mascot">
-                        <h3 class="mascotDeclatation">You're A </h3>
-                        <p class="subheading"></p>
-                        <button class="btn continue-btn">CONTINUE</button>
-                    </div>
-                    <div class="mascotImg">
+        <div class="decisions">
+            <h2 class="decision-heading">Your admission decisions are in. Where will you go?</h2>
 
+            <div class="in-state-public">
+                <div class="card" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">In-State Public</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
             </div>
-        </main>
-        <footer>
-    
-        </footer>
+            <div class="out-of-state-public">
+                <div class="card" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Out-of-State-Public</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="private">
+                <div class="card" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Private School</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="community-college">
+                <div class="card" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Community College</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
-        
+
+        <div class="mascot">
+            <h3 class="mascotDeclatation">You're A </h3>
+            <p class="subheading"></p>
+            <button class="btn continue-btn">CONTINUE</button>
+            <div class="mascotImg"></div>
+        </div>
+
+        <div class="conditionals">
+            <div class="row"><h2>This is your life</h2></div>
+            <div class="wwyd" id="textDiv">
+                
+                <p id="text">This is the summer you have been waiting for! You're 18, your parents have loosen the reigns. How
+                    do you plan to spend it?</p>
+            </div>
+
+            <div id="decisionControls">
+
+
+                <button class="opt-a" id="button1">Get a summer job and save as much as possible.</button>
+                <button class="opt-b" id="button2">Sleep, Eat, Party, Repeat!</button>
+                <button class="opt-b" id="button3">Sleep, Eat, Party, Repeat!</button>
+                <button class="opt-c d-none" id="continue-btnn"></button>
+            </div>
+        </div>
+    <!-- <div class="consequence" id="summer1Consequence">
+    <p class="opt-a" id="sum1Opta">Great! Saving as much as you can before you start college one of the best things you can do to set yourself up for success.</p>
+    <p class="opt-b" id="sum1Optb">Carpe diem!</p>
+    </div> -->
+
+
+
+
+
+
+    </main>
+    <footer>
+        <div class="stats" id="stats">
+            <span class="stat">LifeForce:<span id="focusScore">0</span></span>
+            <span class="stat">Cash:<span id="cashScore">0</span></span>
+            <span class="stat">Debt:<span id="debtScore">0</span></span>
+        </div>
+
+
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
     <script src="js/app.js"></script>
+    <script src="js/conditionals.js"></script>
 </body>
+
 </html>
